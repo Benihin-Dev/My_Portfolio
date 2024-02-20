@@ -15,13 +15,12 @@ import { BiConversation } from "react-icons/bi";
 import { IoGameControllerOutline } from "react-icons/io5";
 import { useInView } from "react-intersection-observer";
 
-
 export default function Extra_Info() {
-    const { ref, inView } = useInView({
-        threshold: 0.6,
-      });
+  const { ref, inView } = useInView({
+    threshold: 0.6,
+  });
   return (
-    <div className="sm:w-4/5 mt-20  w-11/12 mx-auto">
+    <div className="sm:w-4/5 mt-20  w-11/12 mx-auto sm:px-10">
       <div className="sm:hidden justify-center items-center flex">
         <SiBbciplayer className="rotateAnimation size-28 text-slate-600" />
       </div>
@@ -32,10 +31,12 @@ export default function Extra_Info() {
         <div className="sm:w-2/6 justify-center items-center hidden sm:flex">
           <SiBbciplayer className="rotateAnimation size-28 text-slate-600" />
         </div>
-        <div  ref={ref}
-        className={`animated-component ${
-          inView ? "is-visible" : ""
-        } sm:w-4/6 relative h-96 overflow-hidden`}>
+        <div
+          ref={ref}
+          className={`animated-component ${
+            inView ? "is-visible" : ""
+          } sm:w-4/6 relative h-96 overflow-hidden border shadow`}
+        >
           <div className="flex   z-10 absolute top-20 left-20 w-full rotate-[30deg]">
             <div className="-move30 mx-auto ">
               <div className=" border py-1 px-2 shadow mx-auto rotate-[-30deg]">
