@@ -35,7 +35,7 @@ export default function Skills() {
   return (
     <div className=" w-11/12 sm:w-4/5 mx-auto sm:mt-20  items-center ">
       <div className="flex items-center justify-center rotate-45 w-full sm:hidden">
-        <AiOutlineBuild className="size-32 text-slate-00" />
+        <AiOutlineBuild className="size-32 text-slate-600" />
       </div>
 
       <h1 className=" w-3/4 sm:w-2/5  text-orange-500 hover:text-orange-600 mt-5 pb-2 text-xl font-bold border-b-2 border-purple-100/4">

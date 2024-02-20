@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 import projectSchoolBus from "../img/projectSchoolBus.png";
 import linkHub from "../img/linkHub.png";
+import healthGurad from "../img/healthGurad.png";
 import { useInView } from "react-intersection-observer";
 
 export default function InnerProjects() {
@@ -10,12 +11,14 @@ export default function InnerProjects() {
   const [project3IsHovered, setProject3IsHovered] = useState(false);
   const [project4IsHovered, setProject4IsHovered] = useState(false);
   const [project5IsHovered, setProject5IsHovered] = useState(false);
+  const [project6IsHovered, setProject6IsHovered] = useState(false);
 
   const [showProject1Details, setShowProject1Details] = useState(false);
   const [showProject2Details, setShowProject2Details] = useState(false);
   const [showProject3Details, setShowProject3Details] = useState(false);
   const [showProject4Details, setShowProject4Details] = useState(false);
   const [showProject5Details, setShowProject5Details] = useState(false);
+  const [showProject6Details, setShowProject6Details] = useState(false);
 
   const { ref, inView } = useInView({
     threshold: 0.6,
@@ -44,8 +47,10 @@ export default function InnerProjects() {
       setProject3IsHovered(false);
     } else if (name === "project4") {
       setProject4IsHovered(false);
-    } else {
+    } else if (name === "project5") {
       setProject5IsHovered(false);
+    } else {
+      setProject6IsHovered(false);
     }
   };
 
@@ -59,8 +64,10 @@ export default function InnerProjects() {
       setProject3IsHovered(true);
     } else if (name === "project4") {
       setProject4IsHovered(true);
-    } else {
+    } else if (name === "project5") {
       setProject5IsHovered(true);
+    } else {
+      setProject6IsHovered(true);
     }
   };
 
@@ -74,8 +81,10 @@ export default function InnerProjects() {
       setShowProject3Details(!showProject3Details);
     } else if (name === "project4") {
       setShowProject4Details(!showProject4Details);
-    } else {
+    } else if (name === "project5") {
       setShowProject5Details(!showProject5Details);
+    } else {
+      setShowProject6Details(!showProject6Details);
     }
   };
 
@@ -114,7 +123,7 @@ export default function InnerProjects() {
             name="project1"
             className=" w-10/12 sm:w-full projectParent relative rounded my-5 h-40 border mx-auto pt-1 shadow-lg"
           >
-            <div className=" absolute cursor-pointer flex justify-center items-center bottom-0 overflow-hidden mx-auto h-40">
+            <div className=" absolute pt-1 rounded cursor-pointer flex justify-center items-center bottom-0 overflow-hidden mx-auto h-40">
               <img
                 src={linkHub}
                 className="h-full "
@@ -130,7 +139,7 @@ export default function InnerProjects() {
                 project1IsHovered === true ? "upSlider" : "downSlider"
               } ${
                 showProject1Details === true ? "upSlider text-black" : ""
-              }   projectSlider absolute h-full w-full opacity-60 bg-black border top-0 left-0 flex justify-center items-center`}
+              }   projectSlider absolute h-full w-full rounded opacity-80 bg-black border top-0 left-0 flex justify-center items-center`}
             >
               <div
                 className={`  ${
@@ -145,7 +154,7 @@ export default function InnerProjects() {
                     project1IsHovered === true ? " hidden" : ""
                   } text-xl text-purple-300`}
                 >
-                  " LinkHub "
+                  "LinkHub"
                 </h1>
               </div>
             </div>
@@ -157,14 +166,14 @@ export default function InnerProjects() {
               >
                 <div className="h-1/2">
                   <p className="text-base my-2 text-orange-500">" LinkHub "</p>
-                  <p className=" text-justify mt-1 text-sm leading-4 text-slate-500">
+                  <p className=" text-justify my-4 text-sm leading-4 text-slate-400">
                     Users can manage their Social Medias Ids in the webpage and
                     can share their Ids under <b>UNIQUE ID </b>with others.{" "}
                   </p>
-                  <p className=" text-justify text-sm leading-4 text-slate-800 my-1">
+                  <p className=" text-justify text-sm leading-4 text-slate-800 my-2">
                     - MERN Stack -
                   </p>
-                  <button className="hover:bg-purple-700 hover:text-white border-purple-700 border text-xs rounded text-purple-700 p-1 mt-2 w-full">
+                  <button className="hover:bg-purple-700 hover:text-white border-purple-700 border text-xs rounded text-purple-700 p-2 my-2 w-full">
                     More
                   </button>
                 </div>
@@ -181,7 +190,7 @@ export default function InnerProjects() {
             name="project2"
             className=" w-10/12 sm:w-full projectParent relative rounded my-5 h-40 border mx-auto pt-1 shadow-lg"
           >
-            <div className=" absolute cursor-pointer flex justify-center items-center bottom-0 overflow-hidden mx-auto h-40">
+            <div className="rounded absolute pt-1 cursor-pointer flex justify-center items-center bottom-0 overflow-hidden mx-auto h-40">
               <img
                 src={projectSchoolBus}
                 className="h-full "
@@ -197,7 +206,7 @@ export default function InnerProjects() {
                 project2IsHovered === true ? "upSlider" : "downSlider"
               } ${
                 showProject2Details === true ? "upSlider text-black" : ""
-              }   projectSlider absolute h-full w-full opacity-60 bg-black border top-0 left-0 flex justify-center items-center`}
+              }   projectSlider absolute h-full w-full rounded opacity-80 bg-black border top-0 left-0 flex justify-center items-center`}
             >
               <div
                 className={`  ${
@@ -212,7 +221,7 @@ export default function InnerProjects() {
                     project2IsHovered === true ? " hidden" : ""
                   } text-xl text-purple-300`}
                 >
-                  " MYRA "
+                  "MYRA"
                 </h1>
               </div>
             </div>
@@ -223,18 +232,18 @@ export default function InnerProjects() {
                 } shadow-md opacity-0 absolute left-0 z-10 bg-white border py-2 px-3 top-40 w-full`}
               >
                 <div className="h-1/2">
-                  <p className="text-base py-2 text-orange-500">
-                    "Project MYRA "
+                  <p className="text-base py-3 text-orange-500">
+                    " Project MYRA "
                   </p>
-                  <p className=" text-justify py-1 text-sm leading-4 text-slate-500">
+                  <p className=" text-justify py-3 text-sm leading-4 text-slate-400">
                     Users can Track the current location of the School Bus in
                     RealTime using their Mobile Phones.
                   </p>
-                  <p className=" text-justify py-1 text-sm leading-4 text-slate-800 my-1">
+                  <p className=" text-justify py-2 text-sm leading-4 text-slate-800 my-1">
                     - Electronic Components -
                   </p>
 
-                  <button className="hover:bg-purple-700 hover:text-white border-purple-700 border text-xs rounded text-purple-700 p-1 mt-2 w-full">
+                  <button className="hover:bg-purple-700 hover:text-white border-purple-700 border text-xs rounded text-purple-700 p-2 my-2 w-full">
                     More
                   </button>
                 </div>
@@ -251,9 +260,9 @@ export default function InnerProjects() {
             name="project3"
             className=" w-10/12 sm:w-full projectParent relative rounded my-5 h-40 border mx-auto pt-1 shadow-lg"
           >
-            <div className=" absolute cursor-pointer flex justify-center items-center bottom-0 overflow-hidden mx-auto h-40">
+            <div className=" absolute pt-1 rounded cursor-pointer flex justify-center items-center bottom-0 overflow-hidden mx-auto h-40">
               <img
-                src={linkHub}
+                src={healthGurad}
                 className="h-full "
                 alt=""
                 name="project3"
@@ -267,7 +276,7 @@ export default function InnerProjects() {
                 project3IsHovered === true ? "upSlider" : "downSlider"
               } ${
                 showProject3Details === true ? "upSlider text-black" : ""
-              }   projectSlider absolute h-full w-full opacity-60 bg-black border top-0 left-0 flex justify-center items-center`}
+              }   projectSlider absolute h-full rounded w-full opacity-80 bg-black border top-0 left-0 flex justify-center items-center`}
             >
               <div
                 className={`  ${
@@ -293,19 +302,19 @@ export default function InnerProjects() {
                 } shadow-md opacity-0 absolute left-0 z-10 bg-white border py-2 px-3 top-40 w-full`}
               >
                 <div className="h-1/2">
-                  <p className="text-base text-orange-500 my-2">
-                    " Health_Guard "
+                  <p className="text-base text-orange-500 my-3">
+                    "Health_Guard"
                   </p>
-                  <p className=" text-justify text-sm leading-4 py-1 text-slate-500">
+                  <p className=" text-justify text-sm leading-4 py-3 text-slate-400">
                     Revolutionize pharmacy operations with our cutting-edge
                     Pharmacy Management System. Simplify prescription
                     processing, optimize inventory management, and enchance
                     patient care.
                   </p>
-                  <p className=" text-justify text-sm leading-4 text-slate-800 my-2">
+                  <p className=" text-justify text-sm leading-4 text-slate-800 my-3">
                     - C# | .NetFramework -
                   </p>
-                  <button className="hover:bg-purple-700 hover:text-white border-purple-700 border text-xs rounded text-purple-700 p-1 mt-2 w-full">
+                  <button className="hover:bg-purple-700 hover:text-white border-purple-700 border text-xs rounded text-purple-700 p-2 my-3 w-full">
                     More
                   </button>
                 </div>
@@ -313,7 +322,7 @@ export default function InnerProjects() {
             )}
           </div>
         </div>
-        <div className=" sm:flex sm:px-12 gap-20">
+        <div className=" sm:flex sm:px-5 gap-10">
           <div
             onMouseLeave={(event) => {
               handleMouseLeave(event);
@@ -324,7 +333,7 @@ export default function InnerProjects() {
             name="project4"
             className=" w-10/12 sm:w-full projectParent relative rounded my-5 h-40 border mx-auto pt-1 shadow-lg"
           >
-            <div className=" absolute cursor-pointer flex justify-center items-center bottom-0 overflow-hidden mx-auto h-40">
+            <div className=" absolute pt-1 rounded cursor-pointer flex justify-center items-center bottom-0 overflow-hidden mx-auto h-40">
               <img
                 src={linkHub}
                 className="h-full "
@@ -340,7 +349,7 @@ export default function InnerProjects() {
                 project4IsHovered === true ? "upSlider" : "downSlider"
               } ${
                 showProject4Details === true ? "upSlider text-black" : ""
-              }   projectSlider absolute h-full w-full opacity-60 bg-black border top-0 left-0 flex justify-center items-center`}
+              }   projectSlider absolute h-full w-full rounded opacity-80 bg-black border top-0 left-0 flex justify-center items-center`}
             >
               <div
                 className={`  ${
@@ -355,7 +364,7 @@ export default function InnerProjects() {
                     project4IsHovered === true ? " hidden" : ""
                   } text-xl text-purple-300`}
                 >
-                  " Portfolio "
+                  "Portfolio"
                 </h1>
               </div>
             </div>
@@ -366,17 +375,17 @@ export default function InnerProjects() {
                 } shadow-md opacity-0 absolute left-0 z-10 bg-white border py-2 px-3 top-40 w-full`}
               >
                 <div className="h-1/2">
-                  <p className=" text-justify text-sm leading-4 text-slate-500">
-                    <span className="text-base text-orange-500">
-                      " SnapFolio "
-                    </span>
-                    <br />
+                  <p className="text-base text-orange-500 my-3">
+                    " SnapFolio "
+                  </p>
+                  <p className=" text-justify text-sm leading-4 py-3 text-slate-400">
                     website provides various portfolio templates; users can make
                     their own portfolio selecting from any template.
-                    <br />
-                    <span className=" text-slate-800">- MERN Stack -</span>
                   </p>
-                  <button className="hover:bg-purple-700 hover:text-white border-purple-700 border text-xs rounded text-purple-700 p-1 mt-2 w-full">
+                  <p className=" text-justify text-sm leading-4 text-slate-800 my-3">
+                    - MERN Stack -
+                  </p>
+                  <button className="hover:bg-purple-700 hover:text-white border-purple-700 border text-xs rounded text-purple-700 p-2 my-3 w-full">
                     More
                   </button>
                 </div>
@@ -393,7 +402,7 @@ export default function InnerProjects() {
             name="project5"
             className=" w-10/12 sm:w-full projectParent relative rounded my-5 h-40 border mx-auto pt-1 shadow-lg"
           >
-            <div className=" absolute cursor-pointer flex justify-center items-center bottom-0 overflow-hidden mx-auto h-40">
+            <div className=" absolute pt-1 rounded cursor-pointer flex justify-center items-center bottom-0 overflow-hidden mx-auto h-40">
               <img
                 src={linkHub}
                 className="h-full "
@@ -409,7 +418,7 @@ export default function InnerProjects() {
                 project5IsHovered === true ? "upSlider" : "downSlider"
               } ${
                 showProject5Details === true ? "upSlider text-black" : ""
-              }   projectSlider absolute h-full w-full opacity-60 bg-black border top-0 left-0 flex justify-center items-center`}
+              }   projectSlider absolute h-full w-full rounded opacity-80 bg-black border top-0 left-0 flex justify-center items-center`}
             >
               <div
                 className={`  ${
@@ -424,7 +433,7 @@ export default function InnerProjects() {
                     project5IsHovered === true ? " hidden" : ""
                   } text-xl text-purple-300`}
                 >
-                  " LinkHub "
+                  "LinkHub"
                 </h1>
               </div>
             </div>
@@ -435,17 +444,86 @@ export default function InnerProjects() {
                 } shadow-md opacity-0 absolute left-0 z-10 bg-white border py-2 px-3 top-40 w-full`}
               >
                 <div className="h-1/2">
-                  <p className=" text-justify text-sm leading-4 text-slate-500">
-                    <span className="text-base text-orange-500">
-                      " LinkHub "
-                    </span>
-                    <br />
-                    Users can manage their Social Medias Ids in the webpage and
-                    can share their Ids under <b>UNIQUE ID </b>with others.
-                    <br />
-                    <span className=" text-slate-800">- MERN Stack -</span>
+                  <p className="text-base text-orange-500 my-3">
+                    " SnapFolio "
                   </p>
-                  <button className="hover:bg-purple-700 hover:text-white border-purple-700 border text-xs rounded text-purple-700 p-1 mt-2 w-full">
+                  <p className=" text-justify text-sm leading-4 py-3 text-slate-400">
+                    website provides various portfolio templates; users can make
+                    their own portfolio selecting from any template.
+                  </p>
+                  <p className=" text-justify text-sm leading-4 text-slate-800 my-3">
+                    - MERN Stack -
+                  </p>
+                  <button className="hover:bg-purple-700 hover:text-white border-purple-700 border text-xs rounded text-purple-700 p-2 my-3 w-full">
+                    More
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+          <div
+            onMouseLeave={(event) => {
+              handleMouseLeave(event);
+            }}
+            onMouseEnter={(event) => {
+              handleMouseEnter(event);
+            }}
+            name="project6"
+            className=" w-10/12 sm:w-full projectParent relative rounded my-5 h-40 border mx-auto pt-1 shadow-lg"
+          >
+            <div className=" absolute pt-1 rounded cursor-pointer flex justify-center items-center bottom-0 overflow-hidden mx-auto h-40">
+              <img
+                src={linkHub}
+                className="h-full "
+                alt=""
+                name="project6"
+                onClick={(event) => {
+                  handleShowProjectDetails(event);
+                }}
+              />
+            </div>
+            <div
+              className={`  ${
+                project6IsHovered === true ? "upSlider" : "downSlider"
+              } ${
+                showProject4Details === true ? "upSlider text-black" : ""
+              }   projectSlider absolute h-full w-full opacity-80 rounded bg-black border top-0 left-0 flex justify-center items-center`}
+            >
+              <div
+                className={`  ${
+                  project6IsHovered === false ? "text-white " : "text-slate-800"
+                } ${
+                  showProject6Details && "text-slate-800"
+                } projectSlider2 leading-4 text-xs text-center px-5`}
+              >
+                <h1> Protfolio Making Website </h1>
+                <h1
+                  className={` ${
+                    project6IsHovered === true ? " hidden" : ""
+                  } text-xl text-purple-300`}
+                >
+                  "Portfolio"
+                </h1>
+              </div>
+            </div>
+            {showProject6Details && (
+              <div
+                className={`${
+                  isMounted ? "slide-in5" : ""
+                } shadow-md opacity-0 absolute left-0 z-10 bg-white border py-2 px-3 top-40 w-full`}
+              >
+                <div className="h-1/2">
+                  <p className="text-base text-orange-500 my-3">
+                    " SnapFolio "
+                  </p>
+                  <p className=" text-justify text-sm leading-4 py-3 text-slate-400">
+                    website provides various portfolio templates; users can make
+                    their own portfolio selecting from any template.
+                  </p>
+                  <p className=" text-justify text-sm leading-4 text-slate-800 my-3">
+                    - MERN Stack -
+                  </p>
+                  <button className="hover:bg-purple-700 hover:text-white border-purple-700 border text-xs rounded text-purple-700 p-2 my-3 w-full">
                     More
                   </button>
                 </div>
