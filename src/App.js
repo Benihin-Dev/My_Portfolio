@@ -2,8 +2,8 @@ import "./App.css";
 import NavBar from "./components/NavBar";
 import About from "./components/About";
 import Education from "./components/Education";
+import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import Experience from "./components/Experience";
 import Footer from "./components/Footer";
 import { Element } from "react-scroll";
 import { useEffect, useState } from "react";
@@ -13,7 +13,7 @@ function App() {
   const [data, setData] = useState({
     about: {
       name: "John Doe",
-      titleName: "Software Engineer",
+      titleName: ["Web Developer", "Software Engineer"],
       Description:
         "Experienced software dsoftware Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam reprehenderit repellat odit expedita soluta molestiae numquam, rem esse, repellendus, maiores nulla architecto facilis? Hic rem repellendus reiciendis sint recusandae quae. develope ",
       Profile:
@@ -146,80 +146,22 @@ function App() {
     ],
   });
 
-  // const [data1, setData1] = useState(null);
-  // const [error, setError] = useState(null);
-  // const [loading, setLoading] = useState(true);
-
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get(
-  //         "https://snap-folio-backend.vercel.app/api/user/65b5f2cfc74d37333fc625da"
-  //       );
-  //       const result = response.data;
-
-  //       setData1(result);
-  //     } catch (error) {
-  //       console.error("Error fetching data:", error);
-  //       setError(error);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
-
-  // function printData() {
-  //   console.log(data1);
-  // }
-
-  // if (loading) {
-  //   return (
-  //     <div className="flex h-screen justify-center items-center">
-  //       <p className="h-5 border rounded-full w-5 sm:w-8 sm:h-8 loading"></p>
-  //     </div>
-  //   );
-  // }
-
-  // if (error) {
-  //   return (
-  //     <div className="flex h-screen justify-center items-center">
-  //       <h1 className="text-red-700 text-xl">404 error!..</h1>
-  //       {/* <p>Error: {error.message}</p>; */}
-  //     </div>
-  //   );
-  // }
-
-  const aboutData = data.about;
-  const educationData = data.eduSkills.Education;
-  const skillData = data.eduSkills.Skills;
-  const projectData = data.eduSkills.Projects;
-  const experienceData = data.experience;
   const contactData = data.contacts;
 
   return (
     <div className="font-kanit overflow-hidden">
-      {/* <button
-        className=" bg-red-500 rounded-xl"
-        onClick={() => {
-          printData();
-        }}
-      >
-        clicked
-      </button> */}
-      <NavBar aboutData={aboutData} />
+      <NavBar />
       <Element name="about-section">
-        <About aboutData={aboutData} />
+        <About />
       </Element>
       <Element name="education-section">
-        <Education educationData={educationData} />
+        <Education />
+      </Element>
+      <Element name="skills-section">
+        <Skills />
       </Element>
       <Element name="projects-section">
-        <Projects skillData={skillData} projectData={projectData} />
-      </Element>
-      <Element name="contact-section">
-        <Experience experienceData={experienceData} />
+        <Projects />
       </Element>
 
       <Footer contactData={contactData} />
@@ -228,10 +170,3 @@ function App() {
 }
 
 export default App;
-
-<>
-  <About />
-  <Education />
-  <Experience />
-  <Footer />
-</>;

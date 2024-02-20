@@ -1,76 +1,93 @@
 import React from "react";
+import { IoIosSchool } from "react-icons/io";
+import { FaSchool } from "react-icons/fa";
+import { BiSolidSchool } from "react-icons/bi";
+import { useInView } from "react-intersection-observer";
 
-function EducationList({ educationData }) {
+function EducationList() {
   {
-    return educationData.map((data, index) =>
-      index % 2 === 0 ? (
-        <div key={data._id} className="mt-5 w-full flex justify-start animate-child">
-          <div className=" w-full md:w-7/12  rounded-2xl mx-5 border border-purple-300 hover:border-purple-500 px-6 py-2 shadow-md shadow-purple-200 hover:shadow-purple-300">
+    return (
+      <>
+        <div className="mt-5 w-full flex justify-start animate-child">
+          <div className=" w-full md:w-7/12 mx-5 border-b-2 border-purple-300 hover:border-purple-500 px-2 sm:px6 py-2 shadow-purple-200 hover:shadow-purple-300">
             <div className="flex mx-auto justify-between">
               <div>
                 <h2 className=" font-bold leading-5 text-purple-700 ">
-                  {data.title}
+                  Bachelor of Information Communication Technology
                 </h2>
-                <h2 className=" text-xs text-orange-500">{data.place}</h2>
+                <h2 className=" text-sm text-orange-500">
+                  University of Sri Jayewardenapura <br />
+                  2021 - 2025
+                </h2>
               </div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-8 h-8 text-slate-700 hover:text-purple-800"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
-                />
-              </svg>
+              <IoIosSchool className="size-9 text-slate-600 hover:text-purple-700" />
             </div>
-            <h2 className="text-xs text-slate-400">
-              {data.description}
+            <h2 className="text-xs text-slate-500 text-justify">
+              My expertise lies in developing robust and scalable software
+              solutions.I am committed to continuous learning and improving my
+              skills to stay ahead in the ever-evolving field of software
+              engineering.
             </h2>
           </div>
         </div>
-      ) : (
-        <div key={data._id} className="mt-5 w-full flex justify-end animate-child">
-          <div className=" w-full md:w-7/12  rounded-2xl mx-5 border border-purple-300 hover:border-purple-500 px-6 py-2 shadow-md shadow-purple-200 hover:shadow-purple-300">
+
+        <div className="mt-5 w-full flex justify-end animate-child">
+          <div className=" w-full md:w-7/12  mx-5 border-b-2 border-purple-300 hover:border-purple-500 px-2 sm:px-6 py-2  hover:shadow-purple-300">
             <div className="flex mx-auto justify-between">
               <div>
                 <h2 className=" font-bold leading-5 text-purple-700">
-               {data.title}
+                  G.C.E Advancded Level | Technology Stream
                 </h2>
-                <h2 className=" text-xs  text-orange-500">{data.place}</h2>
+                <h2 className=" text-sm  text-orange-500">
+                  Batticaloa Hindu Collage | 2017 - 2019
+                </h2>
               </div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-8 h-8 text-slate-700 hover:text-purple-800"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"
-                />
-              </svg>
+              <FaSchool className="size-7 text-slate-600 hover:text-purple-700" />
             </div>
-            <h2 className="text-xs text-slate-400">
-            {data.description}
+            <h2 className="text-xs text-slate-500 text-justify">
+              Passed with 2AB
+              <br />
+              District 6th & Island 192th with 2.2146
+              <br />
+              In high school, I laid the groundwork for my tech career with a
+              strong focus on math and science. Extracurriculars honed my
+              teamwork and leadership, crucial for the tech industry.
             </h2>
           </div>
         </div>
-      )
+        <div className="mt-5 w-full flex justify-start animate-child">
+          <div className=" w-full md:w-7/12 mx-5 border-b-2 border-purple-300 hover:border-purple-500 px-2 sm:px6 py-2 shadow-purple-200 hover:shadow-purple-300">
+            <div className="flex mx-auto justify-between">
+              <div>
+                <h2 className=" font-bold leading-5 text-purple-700 ">
+                  Basic School Education
+                </h2>
+                <h2 className=" text-sm text-orange-500">
+                  Batticaloa Puliyadimunai G.T.M School <br />
+                  2005 - 2016
+                </h2>
+              </div>
+              <BiSolidSchool className="size-8 text-slate-600 hover:text-purple-700" />
+            </div>
+            <h2 className="text-xs text-slate-500 text-justify">
+              In school, I focused on building a solid academic foundation,
+              especially in mathematics and science. I also participated in
+              extracurricular activities to develop teamwork and leadership
+              skills, which are crucial in the tech industry.
+            </h2>
+          </div>
+        </div>
+      </>
     );
   }
 }
 
-export default function Education({ educationData }) {
+export default function Education() {
+  const { ref, inView } = useInView({
+    threshold: 0.8,
+  });
   return (
-    <div className=" mt-20 block sm:flex w-11/12 md:w-4/5 mx-auto">
+    <div className=" mt-20 block sm:flex w-11/12 md:w-9/12 mx-auto">
       <div className="w-full flex items-center justify-around mt-2 md:mt-16 relative md:w-2/6">
         <div className="flex-col ">
           <svg
@@ -114,15 +131,20 @@ export default function Education({ educationData }) {
         </div>
       </div>
 
-      <div className="w-full md:w-4/6 mx-auto md:pl-10 h-96">
+      <div className="w-full mx-auto  sm:pl-10 h-96">
         <div className="flex items-end justify-end">
           <h1 className="w-3/5 md:w-3/5  text-orange-400 hover:text-orange-500 text-end mt-5 pb-2 text-xl font-bold border-b-2 border-purple-100">
             Education
           </h1>
         </div>
 
-        <div className="w-full h-60 md:h-80 flex-col  mx-3 animate-parent pl-0 md:pl-16 ">
-          <EducationList educationData={educationData} />
+        <div
+          ref={ref}
+          className={`animated-component ${
+            inView ? "is-visible" : ""
+          } w-full h-60 md:h-80 flex-col  mx-3 animate-parent pl-0 md:pl-1 `}
+        >
+          <EducationList />
         </div>
       </div>
     </div>

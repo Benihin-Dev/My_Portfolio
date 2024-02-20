@@ -3,7 +3,7 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #9c70c28e;
+  background-color: #9e9e9e8e;
   border-radius: 6px;
 }
 
@@ -48,7 +48,7 @@ li {
 }
 
 .transparentwhite {
-  background-color: #ffffffce;
+  background-color: #ffffff;
   border-radius: 20px;
   border-bottom: 1px solid #b321d458;
   border-left: 1px solid #ffffff50;
@@ -113,7 +113,7 @@ li {
 }
 
 .animate-parent2::-webkit-scrollbar {
-  height: 6px;
+  height: 0px;
 }
 
 .animate-parent2::-webkit-scrollbar-thumb {
@@ -141,7 +141,7 @@ li {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(-140px);
+    transform: translateX(-250px);
   }
 }
 
@@ -158,10 +158,10 @@ li {
   animation: none;
 }
 
-.animate-parent2:hover .animate-child2 {
+/* .animate-parent2:hover .animate-child2 {
   animation: none;
   transform: none;
-}
+} */
 
 @keyframes dance {
   0%,
@@ -300,10 +300,8 @@ li {
   }
 }
 
-
 .visibleAnimation {
   animation: downup 0.5s ease-in-out;
-  
 }
 
 @keyframes visible {
@@ -314,7 +312,6 @@ li {
     opacity: 1;
   }
 }
-
 
 .upFromDown {
   animation: updown 0.5s ease-in-out;
@@ -342,7 +339,116 @@ li {
   }
 }
 
-.userProfileImg{
+.userProfileImg {
   object-fit: cover;
 }
 
+.slide-in5 {
+  animation: slide-in5 0.2s ease-in-out forwards;
+}
+
+@keyframes slide-in5 {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.about::-webkit-scrollbar {
+  width: 6px;
+}
+
+.about::-webkit-scrollbar-thumb {
+  background-color: #69696919;
+  border-radius: 5px;
+}
+
+.about::-webkit-scrollbar-track {
+  background-color: #ffffff00;
+}
+
+.parentOfSkillElement:hover .childOfSkillElement {
+  border: 2px solid rgb(119, 117, 117);
+}
+
+/* .projectParent:hover .projectSlider {
+  animation: slideUp 0.3s ease-in-out forwards;
+}
+@keyframes slideUp {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 0%;
+  }
+}
+
+.projectParent:hover .projectSlider2 {
+  animation: slideUp2 0.3s ease-in-out forwards;
+}
+@keyframes slideUp2 {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+} */
+
+.downSlider {
+  animation: slideDown 0.3s ease-in-out forwards;
+}
+
+@keyframes slideDown {
+  from {
+    height: 20%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+.upSlider {
+  animation: slideUp 0.3s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    height: 100%;
+  }
+  to {
+    height: 30%;
+    opacity: 1;
+    background: rgba(218, 212, 212, 0.505);
+    border-bottom: 1px solid rgb(203, 198, 198);
+  }
+}
+
+.projectContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.projectContent::-webkit-scrollbar-thumb {
+  background-color: #44404019;
+  border-radius: 5px;
+}
+
+.projectContent::-webkit-scrollbar-track {
+  background-color: #ffffff00;
+}
+
+
+.animated-component {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.animated-component.is-visible {
+  opacity: 1;
+  transform: translateY(0); 
+}

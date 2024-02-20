@@ -1,6 +1,20 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
+import { AiOutlineBuild } from "react-icons/ai";
+import { FaReact } from "react-icons/fa";
+import { FaNodeJs } from "react-icons/fa";
+import { TbFileTypeSql } from "react-icons/tb";
+import { FaCss3Alt } from "react-icons/fa";
+import { TiHtml5 } from "react-icons/ti";
+import { FaPhp } from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
+import { FaBootstrap } from "react-icons/fa6";
+import { SiTailwindcss } from "react-icons/si";
+import { FaPython } from "react-icons/fa";
+import { FaJava } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
+import { useInView } from "react-intersection-observer";
 
-export default function Skills({ skillData }) {
+export default function Skills() {
   useEffect(() => {
     const timerId = setTimeout(() => {
       const elements = document.querySelectorAll(".animate-child2");
@@ -14,38 +28,131 @@ export default function Skills({ skillData }) {
     };
   }, []);
 
+  const { ref, inView } = useInView({
+    threshold: 0.6,
+  });
+
   return (
-    <div className="w-full md:mx-0  animate-parent2 flex  items-center shadow-md shadow-purple-300 h-80">
-      {skillData.map((data) => (
+    <div className=" w-11/12 sm:w-4/5 mx-auto sm:mt-20  items-center ">
+      <div className="flex items-center justify-center rotate-45 w-full sm:hidden">
+        <AiOutlineBuild className="size-32 text-slate-00" />
+      </div>
+
+      <h1 className=" w-3/4 sm:w-2/5  text-orange-500 hover:text-orange-600 mt-5 pb-2 text-xl font-bold border-b-2 border-purple-100/4">
+        Programming Skills
+      </h1>
+      <div className="flex w-full  h-96 my-10">
         <div
-        
-          key={data._id}
-          className="animate-child2 slide-in group min-w-52 max-w-80 mx-2 md:mx-4 md:min-w-64 pb-5 px-5 rounded-2xl border hover:border-purple-400 border-purple-300 shadow-md shadow-purple-200 hover:shadow-purple-300"
+          ref={ref}
+          className={`animated-component ${
+            inView ? "is-visible" : ""
+          } relative sm:w-8/12`}
         >
-          <div className="flex mx-auto w-full my-5  justify-between">
-            <div>
-              <h2 className=" font-bold text-lg tracking-wider  text-purple-700">
-                {data.title}
-              </h2>
+          <div className="flex w-full py-10 animate-parent2">
+            <div className="size-32 parentOfSkillElement flex justify-center items-center relative animate-child2">
+              <div>
+                <TiHtml5 className="size-12 text-orange-500" />
+                <h2 className=" text-center text-slate-500">HTML</h2>
+              </div>
+              <div className="childOfSkillElement  absolute border size-24 rotate-45 rounded top-4 left-4"></div>
             </div>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={1.5}
-              stroke="currentColor"
-              className="w-8 h-8 text-orange-400"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 0 0 .658-.663 48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58v0Z"
-              />
-            </svg>
+            <div className=" size-32 parentOfSkillElement flex justify-center items-center relative  animate-child2">
+              <div>
+                <FaCss3Alt className="size-10  text-blue-700" />
+                <h2 className=" text-center text-slate-500">CSS</h2>
+              </div>
+              <div className="childOfSkillElement  absolute border size-24 rotate-45 rounded top-4 left-4"></div>
+            </div>
+            <div className=" size-32 parentOfSkillElement flex justify-center items-center relative  animate-child2">
+              <div>
+                <IoLogoJavascript className="size-10 mx-auto  text-yellow-300 " />
+                <h2 className="  text-center text-sm text-slate-500">
+                  JavaScript
+                </h2>
+              </div>
+              <div className="childOfSkillElement absolute border size-24 rotate-45 rounded top-4 left-4"></div>
+            </div>
+            <div className=" size-32 parentOfSkillElement flex justify-center items-center relative  animate-child2">
+              <div>
+                <FaPhp className="size-12 mx-auto  text-blue-400 " />
+                <h2 className=" text-center text-xs text-slate-500">PHP</h2>
+              </div>
+              <div className="childOfSkillElement absolute border size-24 rotate-45 rounded top-4 left-4"></div>
+            </div>
           </div>
-          <h2 className=" text-xs text-slate-500">{data.description}</h2>
+          <div className=" absolute top-[70px] left-16 flex w-full py-10 animate-parent2">
+            <div className="size-32 parentOfSkillElement flex justify-center items-center relative animate-child2">
+              <div>
+                <FaReact className="size-12 mx-auto text-blue-500" />
+                <h2 className=" text-center text-slate-500">ReactJS</h2>
+              </div>
+              <div className="childOfSkillElement absolute border size-24 rotate-45 rounded top-4 left-4"></div>
+            </div>
+            <div className=" size-32 parentOfSkillElement flex justify-center items-center relative  animate-child2">
+              <div className="">
+                <FaNodeJs className="size-10 mx-auto  text-green-500" />
+                <h2 className=" text-center text-slate-500">NodeJS</h2>
+              </div>
+              <div className="childOfSkillElement absolute border size-24 rotate-45 rounded top-4 left-4"></div>
+            </div>
+            <div className=" size-32 parentOfSkillElement flex justify-center items-center relative  animate-child2">
+              <div>
+                <FaJava className="size-10 mx-auto text-blue-900 " />
+                <h2 className=" text-center text-slate-500">JAVA</h2>
+              </div>
+              <div className="childOfSkillElement absolute border size-24 rotate-45 rounded top-4 left-4"></div>
+            </div>
+            <div className=" size-32 parentOfSkillElement  flex justify-center items-center relative  animate-child2">
+              <div>
+                <SiExpress className="size-10 mx-auto text-green-500 " />
+                <h2 className=" text-center text-slate-500">ExpressJS</h2>
+              </div>
+              <div className="childOfSkillElement absolute border size-24 rotate-45 rounded top-4 left-4"></div>
+            </div>
+          </div>
+          <div className=" absolute top-[140px] left-[129px] flex w-full py-10 animate-parent2">
+            <div className="size-32 parentOfSkillElement flex justify-center items-center relative animate-child2">
+              <div>
+                <TbFileTypeSql className="size-12 mx-auto text-slate-400" />
+                <h2 className=" text-center text-slate-500">SQL</h2>
+              </div>
+              <div className="childOfSkillElement absolute border size-24 rotate-45 rounded top-4 left-4"></div>
+            </div>
+            <div className=" size-32 parentOfSkillElement flex justify-center items-center relative  animate-child2">
+              <div>
+                <FaBootstrap className="size-10 mx-auto text-purple-600" />
+                <h2 className="  leading-3 text-center text-sm text-slate-500">
+                  Bootstrap <br />
+                  CSS
+                </h2>
+              </div>
+              <div className="childOfSkillElement absolute border size-24 rotate-45 rounded top-4 left-4"></div>
+            </div>
+            <div className=" size-32 parentOfSkillElement flex justify-center items-center relative  animate-child2">
+              <div>
+                <SiTailwindcss className="size-10 mx-auto  text-blue-400 " />
+                <h2 className=" text-center leading-3 text-slate-500">
+                  Tailwind <br /> CSS
+                </h2>
+              </div>
+              <div className="childOfSkillElement absolute border size-24 rotate-45 rounded top-4 left-4"></div>
+            </div>
+            <div className=" size-32 parentOfSkillElement flex justify-center items-center relative  animate-child2">
+              <div>
+                <FaPython className="size-10 mx-auto text-yellow-300 " />
+                <h2 className=" text-center text-slate-500">Python</h2>
+              </div>
+              <div className="childOfSkillElement absolute border size-24 rotate-45 rounded top-4 left-4"></div>
+            </div>
+          </div>
         </div>
-      ))}
+        <div className="hidden 0 sm:flex items-center sm:w-4/12 mx-auto justify-center">
+          <div className=" w-1/2 rotate-45">
+            {" "}
+            <AiOutlineBuild className="size-32 text-slate-500" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

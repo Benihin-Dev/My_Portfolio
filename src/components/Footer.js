@@ -1,53 +1,37 @@
 import React from "react";
 import footer from "../img/footer.png";
-import phoneImg from "../img/telephone-call.png";
-import emailImg from "../img/email.png";
-import linkedinImg from "../img/linkedin.png";
-import githubImg from "../img/github-sign.png";
-import whatsappImg from "../img/whatsapp.png";
-import instagramImg from "../img/instagram.png";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { MdAlternateEmail } from "react-icons/md";
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
 
 export default function Footer({ contactData }) {
   return (
-    <div className="h-20  w-full sm:w-4/5 pb-1 flex justify-center mt-10 sm:mt-20 items-end sm:items-center mx-auto footer">
-      <div className="sm:flex ml-0 gap-5 sm:ml-5 w-full">
-        <div className="w-11/12 sm:w-1/2 md:w-2/5 ml-8 sm:ml-0 mx-auto">
-          <div className="flex gap-3">
-            <img className="contactImg1" src={phoneImg} alt="phone.png" />
-            <h1 className="text-sm hover:text-purple-600">
-              {contactData.phone}
-            </h1>
-          </div>
-          <div className="flex gap-3">
-            <img className="contactImg1" src={emailImg} alt="email.png" />
-            <h1 className=" text-sm hover:text-purple-600">
-              {contactData.email}
-            </h1>
-          </div>
-        </div>
-
-        <div className="flex mt-3 ml-0 sm:mt-0 sm:w-3/5 justify-around">
-          <a href={contactData.socialMedias[0].link}>
-            <img className="contactImg" src={linkedinImg} alt="LinkedIn.png" />
-          </a>
-          <a href={contactData.socialMedias[1].link}>
-            <img className="contactImg" src={githubImg} alt="GitHub.png" />
-          </a>
-          <a href={contactData.socialMedias[2].link}>
-            <img className="contactImg" src={whatsappImg} alt="Whatsapp.png" />
-          </a>
-          <a href={contactData.socialMedias[3].link}>
-            <img
-              className="contactImg"
-              src={instagramImg}
-              alt="Instagram.png"
-            />
-          </a>
-        </div>
+    <div className="h-20  w-10/12 sm:w-4/5 sm:px-5 pb-1 sm:flex justify-center items-center mt-10 sm:mt-20 mx-auto border-t footer">
+      <button className=" bg-purple-800 hover:bg-purple-900 text-white w-full sm:hidden py-1 mt-1 rounded">
+        Hire me
+      </button>{" "}
+      <div className="flex mt-3  justify-center sm:justify-start sm:items-start items-center gap-5 w-full sm:w-4/5">
+        <a href="">
+          <BsFillTelephoneFill className=" text-slate-500 hover:text-black size-4" />
+        </a>
+        <a href="">
+          <MdAlternateEmail className=" text-slate-500 hover:text-black size-5" />
+        </a>
+        <a href="">
+          <FaLinkedin className=" text-slate-500 hover:text-black size-5" />
+        </a>
+        <a href="">
+          <FaGithub className=" text-slate-500 hover:text-black size-5" />
+        </a>
+        <a href="">
+          <FaWhatsapp className=" text-slate-500 hover:text-black size-5" />
+        </a>
       </div>
-      <div className=" w-1/4">
-        <img className="footerImage" src={footer} alt="" />
-      </div>
+      <button className="hidden sm:block h-8  bg-purple-800 hover:bg-purple-900 text-white w-1/5  py-1 mt-1 rounded">
+        Hire me
+      </button>
     </div>
   );
 }
